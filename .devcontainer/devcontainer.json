@@ -1,0 +1,21 @@
+{
+  "name": "Node.js & TypeScript",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": { "VARIANT": "14-buster" }
+  },
+
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+
+  "extensions": [
+    "CoenraadS.bracket-pair-colorizer"
+  ],
+
+  "forwardPorts": [],
+
+  "postCreateCommand": "yarn install",
+
+  "remoteUser": "node"
+}
