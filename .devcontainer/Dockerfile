@@ -20,12 +20,12 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 # Emscripten
 #
 
-# git clone https://github.com/emscripten-core/emsdk.git
+RUN cd /opt \
+    && git clone --depth=50 https://github.com/emscripten-core/emsdk.git \
+    && cd emsdk \
+    && ./emsdk install latest \
+    && ./emsdk active latest
 
-# cd emsdk
+COPY ./docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
-# ./emsdk install latest
-
-# ./emsdk active latest
-
-# source ./emsdk_env.sh
+ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
