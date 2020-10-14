@@ -11,10 +11,14 @@
   },
 
   "extensions": [
-    "CoenraadS.bracket-pair-colorizer"
+    "ms-vscode.cpptools",
+    "ms-vscode.cmake-tools",
+    "esbenp.prettier-vscode",
+    "dtsvet.vscode-wasm",
+    "editorconfig.editorconfig"
   ],
 
-  "forwardPorts": [],
+  "forwardPorts": [8080],
 
   "postCreateCommand": "yarn install",
 
